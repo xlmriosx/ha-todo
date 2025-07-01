@@ -11,7 +11,7 @@ impl Config {
             database_url: std::env::var("DATABASE_URL")
                 .map_err(|_| "DATABASE_URL must be set in .env file")?,
             server_host: std::env::var("SERVER_HOST")
-                .unwrap_or_else(|_| "127.0.0.1".to_string()),
+                .unwrap_or_else(|_| "localhost".to_string()),
             server_port: std::env::var("SERVER_PORT")
                 .unwrap_or_else(|_| "8080".to_string())
                 .parse()

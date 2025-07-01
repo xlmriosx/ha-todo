@@ -56,7 +56,7 @@ struct ApiDoc;
 async fn main() {
     // Inicializar logging
     tracing_subscriber::fmt()
-        .with_env_filter("todo_app=debug,tower_http=debug")
+        .with_env_filter("backend=debug,tower_http=debug")
         .init();
 
     // Cargar variables de entorno
@@ -100,7 +100,7 @@ async fn main() {
     
     tracing::info!("🚀 Server starting on http://{}", bind_address);
     tracing::info!("📚 Swagger UI available at http://{}/swagger-ui", bind_address);
-    tracing::info!("🗄️  Database connected successfully");
+    tracing::info!("🗄️ Database connected successfully");
     tracing::info!("🏥 Health check available at http://{}/api/v1/health", bind_address);
 
     let listener = tokio::net::TcpListener::bind(&bind_address).await.unwrap();
